@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header-container {
+            background-color: #00539f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-container h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header-container p {
+            margin: 5px 0 0;
+            font-size: 18px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #003f7f;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #002f5f;
+            border-radius: 4px;
+        }
+
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Tab styling */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #00539f;
+            color: #fff;
+            border: none;
+            outline: none;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover, .tab.active {
+            background-color: #003f7f;
+        }
+
+        /* Section styling */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #00539f;
+        }
+
+        .section p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Table styling for class timetable */
+        .timetable-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .timetable-table th, .timetable-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .timetable-table th {
+            background-color: #00539f;
+            color: #fff;
+        }
+
+        .timetable-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .timetable-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Footer styling */
+        .footer-container {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-container p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <h1>Student Landing Page</h1>
+        <p>Deakin University</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="login.html">Home</a></li>
+            <li><a href="https://deakin.edu.au/about-deakin/">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="https://www.deakin.edu.au/help-hub">Contact</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="courses.html">Courses List</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="#">Enrollment & Fees</a></li>
+            <li><a href="#">Class Timetable</a></li>
+            <li><a href="#">Contact Support</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <div class="tab-container">
+            <button class="tab active" onclick="showSection('enrollment-section')">Enrollment & Fees</button>
+            <button class="tab" onclick="showSection('timetable-section')">Class Timetable</button>
+        </div>
+
+        <div id="enrollment-section" class="section active">
+            <h2>Enrollment & Fees</h2>
+            <p>Welcome to the Enrollment & Fees section. Here you can find information on how to enroll, fee structures, and payment options.</p>
+            <ul>
+                <li>How to Enroll</li>
+                <li>Fee Structure</li>
+                <li>Payment Options</li>
+                <li>Scholarships and Financial Aid</li>
+            </ul>
+        </div>
+
+        <div id="timetable-section" class="section">
+            <h2>Class Timetable</h2>
+            <p>Below is the class timetable for the current semester. Please check your timetable regularly for any updates or changes.</p>
+            <table class="timetable-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Course</th>
+                        <th>Room</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>9:00 AM - 11:00 AM</td>
+                        <td>Introduction to Programming</td>
+                        <td>Room 101</td>
+                        <td>Dr. Atabak Elmi</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>1:00 PM - 3:00 PM</td>
+                        <td>Database Systems</td>
+                        <td>Room 202</td>
+                        <td>Dr. Atabak Elmi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <p>&copy; 2024 Deakin University. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            var tabs = document.querySelectorAll('.tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector('.tab[onclick="showSection(\'' + sectionId + '\')"]').classList.add('active');
+        }
+    </script>
+</body>
+</html>
